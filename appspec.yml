@@ -2,15 +2,4 @@ version: 0.0
 os: linux 
 files:
   - source: html
-    destination: /tmp/test-html/html
-  - source: scripts
-    destination: /tmp/test-html/scripts
-hooks:
-  ApplicationStop:
-    - location: /tmp/test-html/scripts/stop.sh
-      timeout: 120
-      runas: root
-  ApplicationStart:
-    - location: /tmp/test-html/scripts/start.sh
-      timeout: 120
-      runas: root
+    destination: /usr/share/nginx/html
