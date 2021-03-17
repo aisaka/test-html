@@ -1,14 +1,16 @@
 version: 0.0
 os: linux 
 files:
-  - source: /
-    destination: /tmp/test-html/
+  - source: html
+    destination: /tmp/test-html/html
+  - source: scripts
+    destination: /tmp/test-html/scripts
 hooks:
   ApplicationStop:
-    - location: scripts/stop.sh
+    - location: /tmp/test-html/scripts/stop.sh
       timeout: 120
       runas: root
   ApplicationStart:
-    - location: scripts/start.sh
+    - location: /tmp/test-html/scripts/start.sh
       timeout: 120
       runas: root
